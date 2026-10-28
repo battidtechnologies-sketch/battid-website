@@ -47,6 +47,9 @@ h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
 .hero{background:var(--hero-bg);color:var(--hero-fg)}
 nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:20px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:.02em}
+.bname{line-height:1.15}
+.bzh{display:block;font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:.3em;color:var(--hero-muted)}
+.bzh:empty{display:none}
 .mark{width:40px;height:40px;border-radius:9px;display:block;flex:none}
 .navlinks{display:flex;gap:22px;align-items:center;font-size:14px;flex-wrap:wrap}
 .navlinks a{text-decoration:none;color:var(--hero-muted)}
@@ -124,6 +127,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 }
 @media (max-width:560px){
   .navlinks a{display:none}
+  .brand{font-size:17px;gap:8px}
+  .mark{width:36px;height:36px}
   .services,.steps,.card{grid-template-columns:1fr}
   .phones{height:360px}
   .phone{width:170px}
@@ -139,7 +144,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 <header class="hero">
   <div class="wrap">
     <nav>
-      <a class="brand" href="#top" id="top"><img class="mark" src="logo.png" alt="" width="40" height="40">BATTID</a>
+      <a class="brand" href="#top" id="top"><img class="mark" src="logo.png" alt="" width="40" height="40"><span class="bname">BATTID Technologies<span class="bzh" data-i="bzh"></span></span></a>
       <div class="navlinks">
         <a href="#services" data-i="nav1">Services</a>
         <a href="#work" data-i="nav2">Work</a>
@@ -242,7 +247,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <p data-i="ct-p">Send a message with what you want the system to do. We reply within one working day.</p>
     </div>
     <div class="card">
-      <div class="row"><div><small>WhatsApp / Phone</small><span class="v" id="v-phone">018-772 9166</span></div><button class="copy" type="button" data-copy="v-phone" data-i="copy">Copy</button></div>
+      <div class="row"><div><small>WhatsApp / Phone</small><span class="v" id="v-phone">+60187729166</span></div><button class="copy" type="button" data-copy="v-phone" data-i="copy">Copy</button></div>
       <div class="row"><div><small>Email</small><span class="v" id="v-mail">battid.technologies@gmail.com</span></div><button class="copy" type="button" data-copy="v-mail" data-i="copy">Copy</button></div>
       <div class="row"><div><small data-i="addr">Address</small><span class="v">No 19, Jalan NB 2 13/1, Taman NB 2, 81300 Johor Bahru, Johor</span></div></div>
       <div class="row"><div><small data-i="hire">Hire online</small><span class="v"><a href="https://www.fiverr.com/ares_battid" target="_blank" rel="noopener">Fiverr · @ares_battid</a></span></div></div>
@@ -254,7 +259,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 <footer>
   <div class="wrap">
     <span>BATTID TECHNOLOGIES (202603248913 / TR0349746-P)</span>
-    <span>© 2026 BATTID Technologies</span>
+    <span data-i="foot">© 2026 BATTID Technologies</span>
   </div>
 </footer>
 
@@ -264,7 +269,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     nav1:"服务",nav2:"案例",nav3:"合作流程",nav4:"联络",
     eyebrow:"软件工作室 · 马来西亚新山",
     h1:"用一套系统，取代你的<em>Excel、纸本表格和 WhatsApp 群组</em>",
-    lede:"BATTID Technologies 为社团、学校、俱乐部和中小企业开发网页应用、会员系统和行政工具。团队和会员用手机就能打开。",
+    lede:"BATTID Technologies（博迪科技）为社团、学校、俱乐部和中小企业开发网页应用、会员系统和行政工具。团队和会员用手机就能打开。",
     cta1:"WhatsApp 联络",cta2:"查看案例",
     f1:"人正在使用我们的社团 App",f2:"默认中英双语",f3:"源代码归你所有",
     "s-eyebrow":"我们做什么","s-h2":"把你手工在做的事，变成系统","s-p":"先了解你的团队现在怎么做事，只做真正能帮你省时间的功能。",
@@ -286,7 +291,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     st3:"开发与测试",st3p:"边做边给你测试版，及早提意见。",
     st4:"上线与维护",st4p:"用你自己的账号设置好，并持续维护。",
     "ct-eyebrow":"联络","ct-h2":"告诉我们你需要什么","ct-p":"发个信息说说你想要系统做什么，我们会在一个工作日内回复。",
-    copy:"复制",addr:"地址",hire:"在线雇用"
+    copy:"复制",addr:"地址",hire:"在线雇用",
+    bzh:"博迪科技",foot:"© 2026 BATTID Technologies 博迪科技"
   };
   var en={}, cur="en", nodes=document.querySelectorAll("[data-i]");
   nodes.forEach(function(n){ var k=n.getAttribute("data-i"); if(!(k in en)) en[k]=n.hasAttribute("data-html")?n.innerHTML:n.textContent; });
